@@ -1,9 +1,9 @@
-# name: Say Hello
+name: Say Hello Workflow
 
 on: [pull_request_target, issues, push]
 
 jobs:
-  greeting:
+  greeting-jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
