@@ -1,5 +1,5 @@
 name: Say Hello Workflow Tiger Tiger Tiger
-
+run-name: commit msg: ${{github.event.head_commit.message}}. Deployed by @${{ github.actor }} - hasH ${{github.sha}}
 on: [pull_request_target, issues, push]
 
 jobs:
