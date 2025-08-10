@@ -1,0 +1,16 @@
+name: 1st Workflows
+on: 
+  - workflow_dispatch
+  - push
+
+jobs:
+  First_Job_in_First_Workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "Hello From First job First workflow"
+  Second_Job_in_First_Workflow:
+    runs-on: windows-latest
+    steps:
+      - name: Step 2
+        run: pwd
