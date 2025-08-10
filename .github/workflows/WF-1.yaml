@@ -21,6 +21,11 @@ jobs:
         run: echo "Hello From First job First workflow"
       - name: Step 1_1
         run: ls
+      - name: Print OS version in bash
+        shell: bash
+        run: |
+          uname -a          # kernel + OS info
+          lsb_release -a    # distro details (Ubuntu, version, codename)
 
         
   Second_Job_in_First_Workflow:
@@ -30,3 +35,7 @@ jobs:
         run: |
           pwd
           Hostname
+      - name: Get OS Info
+        shell: pwsh
+        run: | 
+          [System.Environment]::OSVersion.Version
