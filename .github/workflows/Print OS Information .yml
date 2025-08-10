@@ -1,0 +1,40 @@
+name: Print OS Versions
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  os-versions:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: Print native OS version
+        shell: bash
+        run: |
+          echo "=== Native OS Version ==="
+          case "$(uname -s)" in
+            Linux)
+              cat /etc/os-release
+              uname -a
+              ;;
+            Darwin)
+              sw_vers
+              uname -a
+              ;;
+            MINGW*|MSYS*|CYGWIN*)
+              cmd.exe /c ver
+              ;;
+            *)
+              echo "Unknown OS"
+              ;;
+          esac
+
+      - name: Print .NET OS version
+        shell: pwsh
+        run: |
+          Write-Host "=== .NET OS Version ==="
+          [System.Environment]::OSVersion.Version
