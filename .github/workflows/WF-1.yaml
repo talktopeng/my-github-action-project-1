@@ -1,4 +1,4 @@
-name: 1st Workflows
+name: My 1st Workflows
 on: 
   - workflow_dispatch
   #- push
