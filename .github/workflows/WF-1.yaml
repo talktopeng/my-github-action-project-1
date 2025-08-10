@@ -9,8 +9,12 @@ jobs:
     steps:
       - name: Step 1
         run: echo "Hello From First job First workflow"
+      - name: Step 1_1
+        run: ls
   Second_Job_in_First_Workflow:
     runs-on: windows-latest
     steps:
       - name: Step 2
-        run: pwd
+        run: |
+          pwd
+          ls
