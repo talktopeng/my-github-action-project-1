@@ -1,7 +1,7 @@
 name: My 1st Workflows
 on: 
   - workflow_dispatch
-  #- push
+  - push
 
 jobs:
   List_Current_Dir:
