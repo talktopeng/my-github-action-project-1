@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-lastest
     steps:
       - name: List Current Folder Contens
-      - run: ls
+        run: ls
   
   First_Job_in_First_Workflow:
     runs-on: ubuntu-latest
