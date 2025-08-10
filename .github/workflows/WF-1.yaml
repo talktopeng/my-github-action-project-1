@@ -39,3 +39,15 @@ jobs:
         shell: pwsh
         run: | 
           [System.Environment]::OSVersion.Version
+  Third_Job_in_First_Workflow:
+    runs-on: MacOS-latest
+    steps:
+      - name: Print MacOS info Using bash
+        run: |
+          sw_vers           # macOS version info (ProductName, ProductVersion, BuildVersion)
+          uname -a          # kernel + OS details
+        shell: bash
+      - name: Print MacOS info using .Net
+        shell: bash
+        run: |
+          dotnet exec -e "using System; Console.WriteLine(Environment.OSVersion.Version);"
