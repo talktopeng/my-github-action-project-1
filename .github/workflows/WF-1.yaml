@@ -39,6 +39,3 @@ jobs:
         shell: pwsh
         run: | 
           [System.Environment]::OSVersion.Version
-        shell: bash
-        run: |
-          dotnet exec -e "using System; Console.WriteLine(Environment.OSVersion.Version);"
